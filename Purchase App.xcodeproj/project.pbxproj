@@ -9,23 +9,24 @@
 /* Begin PBXBuildFile section */
 		C1D6B2502C9964D1002768B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D6B24F2C9964D1002768B2 /* AppDelegate.swift */; };
 		C1D6B2522C9964D1002768B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D6B2512C9964D1002768B2 /* SceneDelegate.swift */; };
-		C1D6B2542C9964D1002768B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D6B2532C9964D1002768B2 /* ViewController.swift */; };
 		C1D6B2572C9964D1002768B2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C1D6B2562C9964D1002768B2 /* Base */; };
 		C1D6B25A2C9964D1002768B2 /* Purchase_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1D6B2582C9964D1002768B2 /* Purchase_App.xcdatamodeld */; };
 		C1D6B25C2C9964D3002768B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D6B25B2C9964D3002768B2 /* Assets.xcassets */; };
 		C1D6B25F2C9964D3002768B2 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C1D6B25E2C9964D3002768B2 /* Base */; };
+		C1D6B2692C99675F002768B2 /* QuoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D6B2682C99675F002768B2 /* QuoteTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C1D6B24C2C9964D1002768B2 /* Purchase App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Purchase App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D6B24F2C9964D1002768B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1D6B2512C9964D1002768B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C1D6B2532C9964D1002768B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1D6B2562C9964D1002768B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1D6B2592C9964D1002768B2 /* Purchase_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Purchase_App.xcdatamodel; sourceTree = "<group>"; };
 		C1D6B25B2C9964D3002768B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1D6B25E2C9964D3002768B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1D6B2602C9964D3002768B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1D6B2682C99675F002768B2 /* QuoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewController.swift; sourceTree = "<group>"; };
+		C1D6B26A2C99715A002768B2 /* storeKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = storeKitConfig.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +61,13 @@
 			children = (
 				C1D6B24F2C9964D1002768B2 /* AppDelegate.swift */,
 				C1D6B2512C9964D1002768B2 /* SceneDelegate.swift */,
-				C1D6B2532C9964D1002768B2 /* ViewController.swift */,
+				C1D6B2682C99675F002768B2 /* QuoteTableViewController.swift */,
 				C1D6B2552C9964D1002768B2 /* Main.storyboard */,
 				C1D6B25B2C9964D3002768B2 /* Assets.xcassets */,
 				C1D6B25D2C9964D3002768B2 /* LaunchScreen.storyboard */,
 				C1D6B2602C9964D3002768B2 /* Info.plist */,
 				C1D6B2582C9964D1002768B2 /* Purchase_App.xcdatamodeld */,
+				C1D6B26A2C99715A002768B2 /* storeKitConfig.storekit */,
 			);
 			path = "Purchase App";
 			sourceTree = "<group>";
@@ -142,8 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1D6B25A2C9964D1002768B2 /* Purchase_App.xcdatamodeld in Sources */,
-				C1D6B2542C9964D1002768B2 /* ViewController.swift in Sources */,
 				C1D6B2502C9964D1002768B2 /* AppDelegate.swift in Sources */,
+				C1D6B2692C99675F002768B2 /* QuoteTableViewController.swift in Sources */,
 				C1D6B2522C9964D1002768B2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,7 +311,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.songyunwang.Purchase-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.songyunwang.purchaseApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -337,7 +339,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.songyunwang.Purchase-App";
+				PRODUCT_BUNDLE_IDENTIFIER = com.songyunwang.purchaseApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -13,21 +13,21 @@ class QuoteTableViewController: UITableViewController, SKPaymentTransactionObser
     let productID = "com.songyunwang.purchaseApp.premiumQuotes"
     
     var quotesToShow = [
-        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f"
+        "Be the best of whatever you are. — Martin Luther King, Jr.",
+        "Promise me you’ll always remember: You’re braver than you believe, and stronger than you seem, and smarter than you think. — A. A. Milne",
+        "I don’t like to gamble, but if there’s one thing I’m willing to bet on, it’s myself. — Beyoncé",
+        "All our dreams can come true, if we have the courage to pursue them.— Walt Disney",
+        "Do anything, but let it produce joy. — Henry Miller",
+        "A woman is like a tea bag; you never know how strong it is until it’s in hot water.” ― Eleanor Roosevelt"
     ]
     
     let premiumQuotes = [
-        "Thanks",
-        "Thanks",
-        "Thanks",
-        "Thanks",
-        "Thanks",
-        "Thanks"
+        "We need to take risks. We need to go broke. We need to prove them wrong, simply by not giving up. — Awkwafina",
+        "Be courageous. Challenge orthodoxy. Stand up for what you believe in. When you are in your rocking chair talking to your grandchildren many years from now, be sure you have a good story to tell. — Amal Clooney",
+        "It took me quite a long time to develop a voice, and now that I have it, I am not going to be silent. — Madeleine Albright",
+        "Stay close to anything that makes you glad you are alive. — Hafez",
+        "Be yourself; everyone else is already taken. ― Unknown",
+        "The soul is stronger than its surroundings. — William James"
     ]
 
     override func viewDidLoad() {
@@ -90,20 +90,36 @@ class QuoteTableViewController: UITableViewController, SKPaymentTransactionObser
         for transaction in transactions {
             if transaction.transactionState == .purchased {
                 showPremiumQuotes()
-                UserDefaults.standard.setValue(true, forKey: productID)
+                
                 SKPaymentQueue.default().finishTransaction(transaction)
             } else if transaction.transactionState == .failed {
+                
                 if let error = transaction.error {
                     let errorDescription = error.localizedDescription
                     print("Transaction failed due to error: \(errorDescription)")
                 }
+                
+                SKPaymentQueue.default().finishTransaction(transaction)
+                
+            } else if transaction.transactionState == .restored {
+                showPremiumQuotes()
+                
+                print("Transaction restored")
+                
+                // Once it been restored, then hide the restore button for better user experience
+                navigationItem.setRightBarButton(nil, animated: true)
+                
                 SKPaymentQueue.default().finishTransaction(transaction)
             }
         }
     }
     
     func showPremiumQuotes() {
+        // Store bool value that user has purchased it
+        UserDefaults.standard.setValue(true, forKey: productID)
+        
         quotesToShow.append(contentsOf: premiumQuotes)
+        
         tableView.reloadData()
     }
     
@@ -112,5 +128,6 @@ class QuoteTableViewController: UITableViewController, SKPaymentTransactionObser
     }
 
     @IBAction func restorePressed(_ sender: UIBarButtonItem) {
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
 }
